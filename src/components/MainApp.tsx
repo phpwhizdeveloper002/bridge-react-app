@@ -1,5 +1,7 @@
+import React from "react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { User, Settings, Activity } from "lucide-react";
 
 interface MainAppProps {
@@ -19,9 +21,10 @@ export function MainApp({ onConnectBridge }: MainAppProps) {
         {/* Profile Section */}
         <Card className="p-6 mb-6">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center">
-              <User className="w-8 h-8 text-indigo-600" />
-            </div>
+            <Avatar className="w-16 h-16">
+              <AvatarImage className="object-cover" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Professional Person" />
+              <AvatarFallback>JD</AvatarFallback>
+            </Avatar>
             <div>
               <h2>John Doe</h2>
               <p className="text-muted-foreground">Premium Member</p>
@@ -56,8 +59,12 @@ export function MainApp({ onConnectBridge }: MainAppProps) {
           <h3 className="mb-4">Recent Videos</h3>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-8 bg-red-100 rounded flex items-center justify-center">
-                <div className="w-0 h-0 border-l-4 border-l-red-600 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+              <div className="w-12 h-8 rounded overflow-hidden">
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=240&h=160&q=80"
+                  alt="Morning Yoga Flow thumbnail"
+                />
               </div>
               <div>
                 <p>Morning Yoga Flow</p>
@@ -65,8 +72,12 @@ export function MainApp({ onConnectBridge }: MainAppProps) {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-8 bg-red-100 rounded flex items-center justify-center">
-                <div className="w-0 h-0 border-l-4 border-l-red-600 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
+              <div className="w-12 h-8 rounded overflow-hidden">
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=240&h=160&q=80"
+                  alt="HIIT Cardio Blast thumbnail"
+                />
               </div>
               <div>
                 <p>HIIT Cardio Blast</p>
